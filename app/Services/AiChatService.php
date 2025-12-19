@@ -16,7 +16,7 @@ class AiChatService
         try {
             $chatData = new ChatData(
                 messages: [new MessageData(content: $userContent, role: RoleType::USER)],
-                model: 'mistralai/devstral-2512:free',
+                model: 'google/gemma-3n-e4b-it:free',
             );
 
             $response = LaravelOpenRouter::chatRequest($chatData);
@@ -35,7 +35,7 @@ class AiChatService
             Log::error('AI_SERVICE_ERROR: ' . $e->getMessage(), [
                 'input' => $userContent
             ]);
-            
+          
             throw new AiServiceException('Sistem hazırda cavab verə bilmir. Bir az sonra yenidən yoxlayın.');
         }
     }

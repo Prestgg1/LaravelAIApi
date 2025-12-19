@@ -1,7 +1,7 @@
 <?php
 
-use App\Http\Controllers\AiController;
+use App\Http\Controllers\AiChatController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [AiController::class, 'index'])->name('index');
-Route::post('/send', [AiController::class, 'store'])->name('send.message'); 
+Route::get('/', [AiChatController::class, 'index'])->name('index');
+Route::post('/send', [AiChatController::class, 'store'])->name('send.message'); 
